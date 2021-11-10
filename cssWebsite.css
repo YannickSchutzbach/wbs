@@ -1,0 +1,32 @@
+html{
+    background-color: white;
+}
+
+body{
+    font-family: sans-serif;
+    color: black;
+    background-color: cyan;
+    width: 100%;
+}
+
+hr{
+    color: #e22242;
+    border-width: 3px;
+}
+
+table{
+    background-color: chocolate;
+    border:10px solid black;
+    width: 100%;
+}
+
+th{
+    height: 70px;
+}
+td{
+    text-align: center;
+}
+
+tr:hover {
+    background-color: yellow;
+}
