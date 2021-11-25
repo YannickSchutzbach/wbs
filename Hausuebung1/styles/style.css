@@ -15,11 +15,11 @@
 
 [class*="col-"] {
     float: left;
-    margin: 0px;
+    margin: 0;
 }
 
 .col-nb {
-    border: 0px;
+    border: 0;
 }
 
 .new_row {
@@ -33,7 +33,7 @@
         }
     body {
         width: 100%;
-        margin-left: 0px;
+        margin-left: 0;
     }
 }
 
@@ -55,5 +55,7 @@ thead{
 [class="3"]{
     background-color: chartreuse;
 }
-
+hr{
+    font-weight: bolder;
+}
 
