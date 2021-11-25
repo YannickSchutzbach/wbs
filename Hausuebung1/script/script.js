@@ -7,9 +7,10 @@ function swapCurrency(event) {
         alert("Exchange rate is no number");
         return;
     }
-    document.getElementById('exchangeRate').value = String(newRate);
+    document.getElementById('exchangeRate').value = String(newRate.toFixed(4));
     document.getElementById('curr1').value = currency2;
     document.getElementById('curr2').value = currency1;
+    calculateTable(event);
 }
 function calculateTable(event) {
     event.preventDefault();
@@ -20,8 +21,7 @@ function calculateTable(event) {
     }
     var currency1 = document.getElementById('curr1').value;
     var currency2 = document.getElementById('curr2').value;
-    rate = Number(Number(rate).toFixed(4));
-    document.getElementById('tableTitle').innerHTML = "Exchange rate " + currency2 + "/" + currency1 + " = " + rate;
+    document.getElementById('tableTitle').innerHTML = "Exchange rate " + currency2 + "/" + currency1 + " = " + rate.toFixed(4);
     document.getElementById('tableCurrency1').innerHTML = currency1;
     document.getElementById('tableCurrency2').innerHTML = currency2;
     for (var i = 1; i < 29; i++) {
