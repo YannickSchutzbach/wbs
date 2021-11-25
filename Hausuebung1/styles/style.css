@@ -37,4 +37,23 @@
     }
 }
 
+label{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+thead{
+    background-color: cyan;
+}
+
+[class ="1"]{
+    background-color: gold;
+}
+[class="2"]{
+    background-color: chocolate;
+}
+[class="3"]{
+    background-color: chartreuse;
+}
+
 

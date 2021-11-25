@@ -11,48 +11,143 @@
 <hr>
 This currency Calculator shows the exchange rate table for 2 currencies.
 <hr>
-<!---
-<section id="change">
-    <form>
 
-        Currency 1:
-        <input type="text" id="currency1" name="currency1">
-        Currency 2:
-        <input type="text" id="currency2" name="currency2">
-        <input type="submit" value="swap currencies">
-
-    </form>
-
-</section>
-<br>
-<section id="calc">
-
-    <form>
-
-        <label>Exchange rate:</label>
-        <input type="number" step="any" id="exchangeRate" name="exchangeRate">
-        <input type="submit" value="Calculate table">
-
-    </form>
-
-</section>
---->
-
-<div class="col-2">Currency1:</div>
-<input class="col-2" type="text" id="curr1">
-<div class="col-2">Currency2:</div>
-<input class="col-2" type="text" id="curr2">
+<div class="col-2">Currency 1:</div>
+<input class="col-2" type="text" id="curr1" value="Euro">
+<div class="col-2">Currency 2:</div>
+<input class="col-2" type="text" id="curr2" value="Dollar">
 <input class="col-2" type="button" value="swap currencies" id="swapButton">
 
 <div class="new_row"></div>
 <div class="col-2">Exchange rate:</div>
-<input class="col-2" type="number" id="exchangeRate">
+<input class="col-2" type="number" id="exchangeRate" value="1.17">
 <input class="col-2" type="button" value="calculate table" id="calcButton">
 
+<div class="col-12"></div>
 <div class="new_row"></div>
-<b><div class="col-2" id="tableTitle"></div></b>
+<label id="tableTitle">Exchange rate Dollar/Euro = 1.1700</label>
+<div class="new_row"></div>
+<div class="col-12"></div>
 
-
+<!---TABLE--->
+<table>
+    <thead>
+        <td id="tableCurrency1">Euro</td>
+        <td id="tableCurrency2">Dollar</td>
+    </thead>
+    <tr class="1">
+        <td id="10">1.00</td>
+        <td id="11"></td>
+    </tr>
+    <tr class="1">
+        <td id="20">2.00</td>
+        <td id="21"></td>
+    </tr>
+    <tr class="1">
+        <td id="30">3.00</td>
+        <td id="31"></td>
+    </tr>
+    <tr class="1">
+        <td id="40">4.00</td>
+        <td id="41"></td>
+    </tr>
+    <tr class="1">
+        <td id="50">5.00</td>
+        <td id="51"></td>
+    </tr>
+    <tr class="1">
+        <td id="60">6.00</td>
+        <td id="61"></td>
+    </tr>
+    <tr class="1">
+        <td id="70">7.00</td>
+        <td id="71"></td>
+    </tr>
+    <tr class="1">
+        <td id="80">8.00</td>
+        <td id="81"></td>
+    </tr>
+    <tr class="1">
+        <td id="90">9.00</td>
+        <td id="91"></td>
+    </tr>
+    <tr class="1">
+        <td id="100">10.00</td>
+        <td id="101"></td>
+    </tr>
+    <tr class="2">
+        <td id="110">20.00</td>
+        <td id="111"></td>
+    </tr>
+    <tr class="2">
+        <td id="120">30.00</td>
+        <td id="121"></td>
+    </tr>
+    <tr class="2">
+        <td id="130">40.00</td>
+        <td id="131"></td>
+    </tr>
+    <tr class="2">
+        <td id="140">50.00</td>
+        <td id="141"></td>
+    </tr>
+    <tr class="2">
+        <td id="150">60.00</td>
+        <td id="151"></td>
+    </tr>
+    <tr class="2">
+        <td id="160">70.00</td>
+        <td id="161"></td>
+    </tr>
+    <tr class="2">
+        <td id="170">80.00</td>
+        <td id="171"></td>
+    </tr>
+    <tr class="2">
+        <td id="180">90.00</td>
+        <td id="181"></td>
+    </tr>
+    <tr class="2">
+        <td id="190">100.00</td>
+        <td id="191"></td>
+    </tr>
+    <tr class="3">
+        <td id="200">200.00</td>
+        <td id="201"></td>
+    </tr>
+    <tr class="3">
+        <td id="210">300.00</td>
+        <td id="211"></td>
+    </tr>
+    <tr class="3">
+        <td id="220">400.00</td>
+        <td id="221"></td>
+    </tr>
+    <tr class="3">
+        <td id="230">500.00</td>
+        <td id="231"></td>
+    </tr>
+    <tr class="3">
+        <td id="240">600.00</td>
+        <td id="241"></td>
+    </tr>
+    <tr class="3">
+        <td id="250">700.00</td>
+        <td id="251"></td>
+    </tr>
+    <tr class="3">
+        <td id="260">800.00</td>
+        <td id="261"></td>
+    </tr>
+    <tr class="3">
+        <td id="270">900.00</td>
+        <td id="271"></td>
+    </tr>
+    <tr class="3">
+        <td id="280">1000.00</td>
+        <td id="281"></td>
+    </tr>
+</table>
 </body>
 
 </html>
