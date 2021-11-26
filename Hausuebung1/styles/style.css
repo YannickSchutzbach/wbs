@@ -43,7 +43,8 @@ label{
 }
 
 thead{
-    background-color: cyan;
+    background-color: crimson;
+    font-weight: bolder;
 }
 
 [class ="1"]{
@@ -58,4 +59,9 @@ thead{
 hr{
     font-weight: bolder;
 }
-
+tr:hover {
+    background-color: lightskyblue;
+}
+td:hover {
+    background-color: deepskyblue;
+}
