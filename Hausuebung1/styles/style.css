@@ -65,3 +65,7 @@ tr:hover {
 td:hover {
     background-color: deepskyblue;
 }
+
+.table tr:nth-child(even){
+    filter: brightness(80%);
+}
