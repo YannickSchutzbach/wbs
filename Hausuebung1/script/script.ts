@@ -8,7 +8,11 @@ function swapCurrency(event) {
     if (!isFinite(newRate)){
         alert("Exchange rate is no number");
         return;
+    }else if(currency1 === "" || currency2 ===""){
+        alert("No currency declared");
+        return;
     }
+
     (<HTMLInputElement>document.getElementById('exchangeRate')).value = String(newRate.toFixed(4));
     (<HTMLInputElement>document.getElementById('curr1')).value = currency2;
     (<HTMLInputElement>document.getElementById('curr2')).value = currency1;
@@ -19,13 +23,17 @@ function calculateTable(event) {
     event.preventDefault();
 
     let rate = (Number((<HTMLInputElement>document.getElementById('exchangeRate')).value));
+    let currency1 = (<HTMLInputElement>document.getElementById('curr1')).value;
+    let currency2 = (<HTMLInputElement>document.getElementById('curr2')).value;
 
     if (!isFinite(1/rate)){
         alert("Exchange rate is no number");
         return;
+    }else if (currency1 === "" || currency2 ===""){
+        alert("No currency declared");
+        return;
     }
-    let currency1 = (<HTMLInputElement>document.getElementById('curr1')).value;
-    let currency2 = (<HTMLInputElement>document.getElementById('curr2')).value;
+
     document.getElementById('tableTitle').innerHTML = "Exchange rate "+currency2+"/"+currency1+" = "+rate.toFixed(4);
 
     document.getElementById('tableCurrency1').innerHTML = currency1;
