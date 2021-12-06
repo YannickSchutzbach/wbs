@@ -17,7 +17,9 @@
     float: left;
     margin: 0;
 }
-
+html{
+    background-color:lightsteelblue;
+}
 .col-nb {
     border: 0;
 }
