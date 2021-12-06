@@ -160,12 +160,12 @@ function calculateTable(event) {
     document.getElementById('tableTitle').innerHTML = "Exchange rate "+currency2+"/"+currency1+" = "+rate.toFixed(4);
 
     document.getElementById('tableCurrency1').innerHTML = currency1;
-    document.getElementById('tableCurrency2').innerHTML = currency2
+    document.getElementById('tableCurrency2').innerHTML = currency2;
     for (let i = 1; i < 29; i++) {
         let value = (Number(document.getElementById(i+'0').innerHTML)*rate).toFixed(2);
         document.getElementById(i+'1').innerHTML = String(value);
     }
-    (<HTMLInputElement>document.getElementById('exchangeRate')).value = String(rate.toFixed(2));
+    (<HTMLInputElement>document.getElementById('exchangeRate')).value = String(rate.toFixed(4));
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {

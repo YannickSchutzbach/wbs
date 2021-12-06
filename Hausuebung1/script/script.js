@@ -38,7 +38,7 @@ function calculateTable(event) {
         var value = (Number(document.getElementById(i + '0').innerHTML) * rate).toFixed(2);
         document.getElementById(i + '1').innerHTML = String(value);
     }
-    document.getElementById('exchangeRate').value = String(rate.toFixed(2));
+    document.getElementById('exchangeRate').value = String(rate.toFixed(4));
 }
 document.addEventListener('DOMContentLoaded', function (event) {
     document.getElementById('swapButton').addEventListener("click", function (event) {
