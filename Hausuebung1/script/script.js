@@ -11,7 +11,7 @@ function swapCurrency(event) {
         alert("No currency declared");
         return;
     }
-    document.getElementById('exchangeRate').value = String(newRate);
+    document.getElementById('exchangeRate').value = newRate.toFixed(4);
     document.getElementById('curr1').value = currency2;
     document.getElementById('curr2').value = currency1;
     calculateTable(event);

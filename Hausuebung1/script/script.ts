@@ -13,7 +13,7 @@ function swapCurrency(event) {
         return;
     }
 
-    (<HTMLInputElement>document.getElementById('exchangeRate')).value = String(newRate);
+    (<HTMLInputElement>document.getElementById('exchangeRate')).value = newRate.toFixed(4);
     (<HTMLInputElement>document.getElementById('curr1')).value = currency2;
     (<HTMLInputElement>document.getElementById('curr2')).value = currency1;
 
