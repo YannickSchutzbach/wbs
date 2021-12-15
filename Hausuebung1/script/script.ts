@@ -1,42 +1,55 @@
 function swapCurrency(event) {
     event.preventDefault();
 
-    let newRate = 1/(Number((<HTMLInputElement>document.getElementById('exchangeRate')).value));
-    let currency1 = (<HTMLInputElement>document.getElementById('curr1')).value;
-    let currency2 = (<HTMLInputElement>document.getElementById('curr2')).value;
-
-    if (!isFinite(newRate)){
-        alert("Exchange rate is no number");
+    if ((<HTMLInputElement>document.getElementById('case')).value === "") {
+        alert("Calculate First!");
         return;
-    }else if(currency1 === "" || currency2 ===""){
-        alert("No currency declared");
+    }
+    if ((<HTMLInputElement>document.getElementById('case')).value === "a") {
+        (<HTMLInputElement>document.getElementById('case')).value = "b";
+    } else {
+        (<HTMLInputElement>document.getElementById('case')).value = "a";
+    }
+    calculateTable();
+}
+
+function buttonCalculate(event) {
+    event.preventDefault();
+    if (!(<HTMLInputElement>document.getElementById('curr1')).value || !(<HTMLInputElement>document.getElementById('curr2')).value) {
+        alert("No currency declared!")
+        return;
+
+    } else if (!isFinite(1 / Number((<HTMLInputElement>document.getElementById('exchangeRate')).value))) {
+        alert("Exchange rate is no number");
         return;
     }
 
-    (<HTMLInputElement>document.getElementById('exchangeRate')).value = newRate.toFixed(4);
-    (<HTMLInputElement>document.getElementById('curr1')).value = currency2;
-    (<HTMLInputElement>document.getElementById('curr2')).value = currency1;
+    (<HTMLInputElement>document.getElementById('hideRate')).value = Number((<HTMLInputElement>document.getElementById('exchangeRate')).value).toFixed(4);
+    (<HTMLInputElement>document.getElementById('hideCurr1')).value = (<HTMLInputElement>document.getElementById('curr1')).value;
+    (<HTMLInputElement>document.getElementById('hideCurr2')).value = (<HTMLInputElement>document.getElementById('curr2')).value;
+    (<HTMLInputElement>document.getElementById('case')).value = "b";
 
-    calculateTable(event);
+    calculateTable();
 }
 
-function calculateTable(event) {
-    event.preventDefault();
-
-    let rate = (Number((<HTMLInputElement>document.getElementById('exchangeRate')).value));
-    let currency1 = (<HTMLInputElement>document.getElementById('curr1')).value;
-    let currency2 = (<HTMLInputElement>document.getElementById('curr2')).value;
-
-    if (!isFinite(1/rate)){
-        alert("Exchange rate is no number");
-        return;
-    }else if (currency1 === "" || currency2 ===""){
-        alert("No currency declared");
-        return;
+function calculateTable() {
+    let rate;
+    let currency1;
+    let currency2;
+    if ((<HTMLInputElement>document.getElementById('case')).value === "a") {
+        rate = 1 / (Number((<HTMLInputElement>document.getElementById('hideRate')).value));
+        rate = Number(rate.toFixed(4));
+        currency1 = (<HTMLInputElement>document.getElementById('hideCurr2')).value;
+        currency2 = (<HTMLInputElement>document.getElementById('hideCurr1')).value;
+    }
+    if ((<HTMLInputElement>document.getElementById('case')).value === "b") {
+        rate = (Number((<HTMLInputElement>document.getElementById('hideRate')).value));
+        currency1 = (<HTMLInputElement>document.getElementById('hideCurr1')).value;
+        currency2 = (<HTMLInputElement>document.getElementById('hideCurr2')).value;
     }
 
     //generate Table
-    document.getElementById('table').innerHTML=`
+    document.getElementById('table').innerHTML = `
     <table class="table">
     <thead>
     <td id="tableCurrency1"></td>
@@ -157,15 +170,15 @@ function calculateTable(event) {
 </table>
     `
 
-    document.getElementById('tableTitle').innerHTML = "Exchange rate "+currency2+"/"+currency1+" = "+rate.toFixed(4);
-
+    document.getElementById('tableTitle').innerHTML = "Exchange rate " + currency2 + "/" + currency1 + " = " + rate.toFixed(4);
     document.getElementById('tableCurrency1').innerHTML = currency1;
     document.getElementById('tableCurrency2').innerHTML = currency2;
+
+    //fill Table
     for (let i = 1; i < 29; i++) {
-        let value = (Number(document.getElementById(i+'0').innerHTML)*rate).toFixed(2);
-        document.getElementById(i+'1').innerHTML = String(value);
+        let value = (Number(document.getElementById(i + '0').innerHTML) * rate).toFixed(2);
+        document.getElementById(i + '1').innerHTML = String(value);
     }
-    (<HTMLInputElement>document.getElementById('exchangeRate')).value = String(rate.toFixed(4));
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -173,6 +186,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         swapCurrency(event);
     })
     document.getElementById('calcButton').addEventListener("click", (event) => {
-        calculateTable(event);
+        buttonCalculate(event);
     })
 })
